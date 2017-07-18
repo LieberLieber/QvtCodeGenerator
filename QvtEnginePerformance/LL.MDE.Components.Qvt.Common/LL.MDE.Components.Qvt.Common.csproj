@@ -43,12 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GeneratedTransformation.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Common\LL.MDE.Components.Common.Util\LL.MDE.Components.Common.Util.csproj">
-      <Project>{822e7f1c-ac2e-407d-b650-f5d3d83618ad}</Project>
-      <Name>LL.MDE.Components.Common.Util</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
