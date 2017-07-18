@@ -1,0 +1,51 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.CustomExtensions.EMOFExtensions" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTRelation" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.EssentialOCL" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTTemplate" #>
+<#@ output extension=".qvt" #>
+
+<# IRelationalTransformation transformation = this.transformation; #>
+
+transformation <#=transformation.Name #> (<#=string.Join(",", transformation.ModelParameter.Select(p => p.Name + ":" + p.UsedPackage.First().Name)) #>)
+{
+<#PushIndent(); #>
+<#foreach (IRelation relation in transformation.Rule.OfType<IRelation>())
+{ #>
+<#=relation.IsTopLevel.GetValueOrDefault(false) ? "top " : "" #>relation <#=relation.Name #>
+{
+<#PushIndent(); #>
+<#foreach (IVariable variable in relation.Variable)
+{ #>
+<#=variable.Name #>: <#=variable.Type.Name #>;
+<# } // End foreach variable#>
+
+<#foreach (IRelationDomain domain in relation.Domain.OfType<IRelationDomain>())
+{
+    if (domain.TypedModel != null)
+    {#>
+<#=!domain.IsEnforceable.GetValueOrDefault(false) ? "checkonly " : "enforce " #>domain <#=domain.TypedModel.Name #> <#GenerateString(domain.Pattern.TemplateExpression as IObjectTemplateExp, true); #>
+<# }
+    else
+    { #>
+primitive domain <#= domain.RootVariable.Name #> : <#= domain.RootVariable.Type.GetRealTypeName() #>;
+<# }
+} // End foreach domain#> 
+<#PopIndent(); #>
+}
+<# if (relation.Where != null)
+{ #>
+
+where {
+<#PushIndent(); #>
+<# GenerateString(relation.Where); #>
+<#PopIndent(); #>
+}
+        
+<# } #>
+
+
+<# } // End foreach relation#>
+<#PopIndent(); #>
+}

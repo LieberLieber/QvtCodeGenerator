@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DE4DD8D-4829-49E4-A175-B5C740E69F9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LL.MDE.Components.Qvt.Metamodel</RootNamespace>
+    <AssemblyName>LL.MDE.Components.Qvt.Metamodel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NMF.Collections, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Expressions, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Expressions.1.0.43\lib\net40\NMF.Expressions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Expressions.Linq, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Expressions.1.0.43\lib\net40\NMF.Expressions.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Models, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Serialization, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Utilities, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Utilities.1.0.43\lib\net40\NMF.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomExtensions\EMOFExtensions\EMOFExtensions.cs" />
+    <Compile Include="CustomExtensions\EMOFExtensions\PrimitiveTypes.cs" />
+    <Compile Include="CustomExtensions\EssentialOCLExtensions\Assignment.cs" />
+    <Compile Include="CustomExtensions\EssentialOCLExtensions\CSharpOpaqueExpression.cs" />
+    <Compile Include="CustomExtensions\QVTRelationExtensions\PropertyPath.cs" />
+    <Compile Include="CustomExtensions\QVTRelationExtensions\QVTRelationExtensions.cs" />
+    <Compile Include="CustomExtensions\QVTTemplateExtensions\QVTTemplateExtensions.cs" />
+    <Compile Include="Generated\EMOF\Class.cs" />
+    <Compile Include="Generated\EMOF\ClassOwnedAttributeCollection.cs" />
+    <Compile Include="Generated\EMOF\ClassOwnedOperationCollection.cs" />
+    <Compile Include="Generated\EMOF\Comment.cs" />
+    <Compile Include="Generated\EMOF\DataType.cs" />
+    <Compile Include="Generated\EMOF\Element.cs" />
+    <Compile Include="Generated\EMOF\Enumeration.cs" />
+    <Compile Include="Generated\EMOF\EnumerationLiteral.cs" />
+    <Compile Include="Generated\EMOF\EnumerationOwnedLiteralCollection.cs" />
+    <Compile Include="Generated\EMOF\Extent.cs" />
+    <Compile Include="Generated\EMOF\Factory.cs" />
+    <Compile Include="Generated\EMOF\IClass.cs" />
+    <Compile Include="Generated\EMOF\IComment.cs" />
+    <Compile Include="Generated\EMOF\IDataType.cs" />
+    <Compile Include="Generated\EMOF\IElement.cs" />
+    <Compile Include="Generated\EMOF\IEnumeration.cs" />
+    <Compile Include="Generated\EMOF\IEnumerationLiteral.cs" />
+    <Compile Include="Generated\EMOF\IExtent.cs" />
+    <Compile Include="Generated\EMOF\IFactory.cs" />
+    <Compile Include="Generated\EMOF\IMultiplicityElement.cs" />
+    <Compile Include="Generated\EMOF\INamedElement.cs" />
+    <Compile Include="Generated\EMOF\IObject.cs" />
+    <Compile Include="Generated\EMOF\IOperation.cs" />
+    <Compile Include="Generated\EMOF\IPackage.cs" />
+    <Compile Include="Generated\EMOF\IParameter.cs" />
+    <Compile Include="Generated\EMOF\IPrimitiveType.cs" />
+    <Compile Include="Generated\EMOF\IProperty.cs" />
+    <Compile Include="Generated\EMOF\IReflectiveCollection.cs" />
+    <Compile Include="Generated\EMOF\IReflectiveSequence.cs" />
+    <Compile Include="Generated\EMOF\ITag.cs" />
+    <Compile Include="Generated\EMOF\IType.cs" />
+    <Compile Include="Generated\EMOF\ITypedElement.cs" />
+    <Compile Include="Generated\EMOF\IURIExtent.cs" />
+    <Compile Include="Generated\EMOF\MultiplicityElement.cs" />
+    <Compile Include="Generated\EMOF\NamedElement.cs" />
+    <Compile Include="Generated\EMOF\Object.cs" />
+    <Compile Include="Generated\EMOF\Operation.cs" />
+    <Compile Include="Generated\EMOF\OperationOwnedParameterCollection.cs" />
+    <Compile Include="Generated\EMOF\Package.cs" />
+    <Compile Include="Generated\EMOF\PackageNestedPackageCollection.cs" />
+    <Compile Include="Generated\EMOF\PackageOwnedTypeCollection.cs" />
+    <Compile Include="Generated\EMOF\Parameter.cs" />
+    <Compile Include="Generated\EMOF\PrimitiveType.cs" />
+    <Compile Include="Generated\EMOF\Property.cs" />
+    <Compile Include="Generated\EMOF\ReflectiveCollection.cs" />
+    <Compile Include="Generated\EMOF\ReflectiveSequence.cs" />
+    <Compile Include="Generated\EMOF\Tag.cs" />
+    <Compile Include="Generated\EMOF\Type.cs" />
+    <Compile Include="Generated\EMOF\TypedElement.cs" />
+    <Compile Include="Generated\EMOF\URIExtent.cs" />
+    <Compile Include="Generated\EssentialOCL\AnyType.cs" />
+    <Compile Include="Generated\EssentialOCL\BagType.cs" />
+    <Compile Include="Generated\EssentialOCL\BooleanLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\CallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\CollectionItem.cs" />
+    <Compile Include="Generated\EssentialOCL\CollectionKind.cs" />
+    <Compile Include="Generated\EssentialOCL\CollectionLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\CollectionLiteralExpPartCollection.cs" />
+    <Compile Include="Generated\EssentialOCL\CollectionLiteralPart.cs" />
+    <Compile Include="Generated\EssentialOCL\CollectionRange.cs" />
+    <Compile Include="Generated\EssentialOCL\CollectionType.cs" />
+    <Compile Include="Generated\EssentialOCL\EnumLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ExpressionInOcl.cs" />
+    <Compile Include="Generated\EssentialOCL\FeatureCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IAnyType.cs" />
+    <Compile Include="Generated\EssentialOCL\IBagType.cs" />
+    <Compile Include="Generated\EssentialOCL\IBooleanLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ICallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ICollectionItem.cs" />
+    <Compile Include="Generated\EssentialOCL\ICollectionLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ICollectionLiteralPart.cs" />
+    <Compile Include="Generated\EssentialOCL\ICollectionRange.cs" />
+    <Compile Include="Generated\EssentialOCL\ICollectionType.cs" />
+    <Compile Include="Generated\EssentialOCL\IEnumLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IExpressionInOcl.cs" />
+    <Compile Include="Generated\EssentialOCL\IFeatureCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IfExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IIfExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IIntegerLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IInvalidLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IInvalidType.cs" />
+    <Compile Include="Generated\EssentialOCL\IIterateExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IIteratorExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ILetExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ILiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ILoopExp.cs" />
+    <Compile Include="Generated\EssentialOCL\INavigationCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IntegerLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\INullLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\INumericLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\InvalidLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\InvalidType.cs" />
+    <Compile Include="Generated\EssentialOCL\IOclExpression.cs" />
+    <Compile Include="Generated\EssentialOCL\IOperationCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IOrderedSetType.cs" />
+    <Compile Include="Generated\EssentialOCL\IPrimitiveLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IPropertyCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IRealLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ISequenceType.cs" />
+    <Compile Include="Generated\EssentialOCL\ISetType.cs" />
+    <Compile Include="Generated\EssentialOCL\IStringLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ITemplateParameterType.cs" />
+    <Compile Include="Generated\EssentialOCL\IterateExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IteratorExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ITupleLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\ITupleLiteralPart.cs" />
+    <Compile Include="Generated\EssentialOCL\ITupleType.cs" />
+    <Compile Include="Generated\EssentialOCL\ITypeExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IUnlimitedNaturalExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IVariable.cs" />
+    <Compile Include="Generated\EssentialOCL\IVariableExp.cs" />
+    <Compile Include="Generated\EssentialOCL\IVoidType.cs" />
+    <Compile Include="Generated\EssentialOCL\LetExp.cs" />
+    <Compile Include="Generated\EssentialOCL\LiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\LoopExp.cs" />
+    <Compile Include="Generated\EssentialOCL\NavigationCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\NullLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\NumericLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\OclExpression.cs" />
+    <Compile Include="Generated\EssentialOCL\OperationCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\OrderedSetType.cs" />
+    <Compile Include="Generated\EssentialOCL\PrimitiveLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\PropertyCallExp.cs" />
+    <Compile Include="Generated\EssentialOCL\RealLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\SequenceType.cs" />
+    <Compile Include="Generated\EssentialOCL\SetType.cs" />
+    <Compile Include="Generated\EssentialOCL\StringLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\TemplateParameterType.cs" />
+    <Compile Include="Generated\EssentialOCL\TupleLiteralExp.cs" />
+    <Compile Include="Generated\EssentialOCL\TupleLiteralExpPartCollection.cs" />
+    <Compile Include="Generated\EssentialOCL\TupleLiteralPart.cs" />
+    <Compile Include="Generated\EssentialOCL\TupleType.cs" />
+    <Compile Include="Generated\EssentialOCL\TypeExp.cs" />
+    <Compile Include="Generated\EssentialOCL\UnlimitedNaturalExp.cs" />
+    <Compile Include="Generated\EssentialOCL\Variable.cs" />
+    <Compile Include="Generated\EssentialOCL\VariableExp.cs" />
+    <Compile Include="Generated\EssentialOCL\VoidType.cs" />
+    <Compile Include="Generated\QVTBase\Domain.cs" />
+    <Compile Include="Generated\QVTBase\Function.cs" />
+    <Compile Include="Generated\QVTBase\FunctionParameter.cs" />
+    <Compile Include="Generated\QVTBase\IDomain.cs" />
+    <Compile Include="Generated\QVTBase\IFunction.cs" />
+    <Compile Include="Generated\QVTBase\IFunctionParameter.cs" />
+    <Compile Include="Generated\QVTBase\IPattern.cs" />
+    <Compile Include="Generated\QVTBase\IPredicate.cs" />
+    <Compile Include="Generated\QVTBase\IRule.cs" />
+    <Compile Include="Generated\QVTBase\ITransformation.cs" />
+    <Compile Include="Generated\QVTBase\ITypedModel.cs" />
+    <Compile Include="Generated\QVTBase\Pattern.cs" />
+    <Compile Include="Generated\QVTBase\PatternPredicateCollection.cs" />
+    <Compile Include="Generated\QVTBase\Predicate.cs" />
+    <Compile Include="Generated\QVTBase\Rule.cs" />
+    <Compile Include="Generated\QVTBase\RuleDomainCollection.cs" />
+    <Compile Include="Generated\QVTBase\Transformation.cs" />
+    <Compile Include="Generated\QVTBase\TransformationModelParameterCollection.cs" />
+    <Compile Include="Generated\QVTBase\TransformationRuleCollection.cs" />
+    <Compile Include="Generated\QVTBase\TypedModel.cs" />
+    <Compile Include="Generated\QVTRelation\DomainPattern.cs" />
+    <Compile Include="Generated\QVTRelation\IDomainPattern.cs" />
+    <Compile Include="Generated\QVTRelation\IKey.cs" />
+    <Compile Include="Generated\QVTRelation\IOppositePropertyCallExp.cs" />
+    <Compile Include="Generated\QVTRelation\IRelation.cs" />
+    <Compile Include="Generated\QVTRelation\IRelationalTransformation.cs" />
+    <Compile Include="Generated\QVTRelation\IRelationCallExp.cs" />
+    <Compile Include="Generated\QVTRelation\IRelationDomain.cs" />
+    <Compile Include="Generated\QVTRelation\IRelationDomainAssignment.cs" />
+    <Compile Include="Generated\QVTRelation\IRelationImplementation.cs" />
+    <Compile Include="Generated\QVTRelation\Key.cs" />
+    <Compile Include="Generated\QVTRelation\OppositePropertyCallExp.cs" />
+    <Compile Include="Generated\QVTRelation\Relation.cs" />
+    <Compile Include="Generated\QVTRelation\RelationalTransformation.cs" />
+    <Compile Include="Generated\QVTRelation\RelationalTransformationOwnedKeyCollection.cs" />
+    <Compile Include="Generated\QVTRelation\RelationCallExp.cs" />
+    <Compile Include="Generated\QVTRelation\RelationDomain.cs" />
+    <Compile Include="Generated\QVTRelation\RelationDomainAssignment.cs" />
+    <Compile Include="Generated\QVTRelation\RelationDomainDefaultAssignmentCollection.cs" />
+    <Compile Include="Generated\QVTRelation\RelationImplementation.cs" />
+    <Compile Include="Generated\QVTRelation\RelationOperationalImplCollection.cs" />
+    <Compile Include="Generated\QVTTemplate\CollectionTemplateExp.cs" />
+    <Compile Include="Generated\QVTTemplate\ICollectionTemplateExp.cs" />
+    <Compile Include="Generated\QVTTemplate\IObjectTemplateExp.cs" />
+    <Compile Include="Generated\QVTTemplate\IPropertyTemplateItem.cs" />
+    <Compile Include="Generated\QVTTemplate\ITemplateExp.cs" />
+    <Compile Include="Generated\QVTTemplate\ObjectTemplateExp.cs" />
+    <Compile Include="Generated\QVTTemplate\ObjectTemplateExpPartCollection.cs" />
+    <Compile Include="Generated\QVTTemplate\PropertyTemplateItem.cs" />
+    <Compile Include="Generated\QVTTemplate\TemplateExp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

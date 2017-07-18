@@ -1,0 +1,43 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Common" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.CustomExtensions.EMOFExtensions" #>
+<#@ import namespace="LL.MDE.Components.Qvt.QvtCodeGenerator.Analysis" #>
+<#@ import namespace="LL.MDE.Components.Qvt.QvtCodeGenerator.CodeGeneration" #>
+<#@ import namespace="LL.MDE.Components.Qvt.QvtCodeGenerator.CodeGeneration.RelationTemplate" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.EMOF" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.EssentialOCL" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTBase" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTRelation" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTTemplate" #>
+
+<#@ output extension=".cs" #>
+
+
+<#
+
+    // Small hack to bypass limitation of ForTea plugin ( https://github.com/MrJul/ForTea/issues/3 )
+    // We redeclare members so that ForTea finds them, and enables code completion etc. 
+    // The errors can be ignored, as the generated .cs file compiles correctly.
+    IRelationalTransformation Transformation = this.Transformation;
+    #>
+
+
+<# // Generation of the namespace #>
+<#= QvtCodeGeneratorStrings.Namespace(Transformation) #> 
+{
+    public interface <#=QvtCodeGeneratorStrings.FunctionsInterfaceName(Transformation)#>
+    {<#
+    foreach (IFunction function in Transformation.OwnedOperation.OfType<IFunction>())
+    {
+		IList<string> args = function.OwnedParameter.Select(p => p.Type.GetRealTypeName() + " " + p.Name).ToList();
+        #><#= function.Type == null ? "void" : function.Type.GetRealTypeName() #> <#= function.Name #>(<#= string.Join(",",args) #> );<#
+    }
+    #>}
+}
+
+
+
+
+

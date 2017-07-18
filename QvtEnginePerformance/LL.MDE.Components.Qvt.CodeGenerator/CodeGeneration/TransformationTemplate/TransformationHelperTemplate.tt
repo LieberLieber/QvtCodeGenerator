@@ -1,0 +1,24 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ import namespace="LL.MDE.Components.Qvt.QvtCodeGenerator.CodeGeneration" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Common" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTBase" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTRelation" #>
+
+
+
+<#+
+
+	public void GenerateAttributesAndConstructor(IRelationalTransformation transformation)
+	{
+	     
+
+
+		
+	}
+
+
+
+#>

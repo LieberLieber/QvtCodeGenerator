@@ -1,0 +1,115 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Common" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.CustomExtensions.EMOFExtensions" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.CustomExtensions.QVTRelationExtensions" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.EMOF" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.EMOFExtensions" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.EssentialOCL" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTBase" #>
+<#@ import namespace="LL.MDE.Components.Qvt.Metamodel.QVTRelation" #>
+<#@ import namespace="LL.MDE.Components.Qvt.QvtCodeGenerator.CodeGeneration" #>
+<#@ import namespace="LL.MDE.Components.Qvt.QvtCodeGenerator.CodeGeneration.RelationTemplate" #>
+<#@ import namespace="NMF.Utilities" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+<#@ include file="TransformationHelperTemplate.tt" #>
+
+using System;
+using System.Collections.Generic; 
+using System.Linq;
+using LL.MDE.Components.Qvt.Common;
+<#
+    // Small hack to bypass limitation of ForTea plugin ( https://github.com/MrJul/ForTea/issues/3 )
+    // We redeclare members so that ForTea finds them, and enables code completion etc. 
+    // The errors can be ignored, as the generated .cs file compiles correctly.
+    IRelationalTransformation transformation = this.Transformation;
+    ISet<ITypedModel> validEnforceTargetParams = this.validEnforceTargetParams;
+    bool useMetamodelInterface = this.useMetamodelInterface;
+    #>
+
+<# // Generating of the "usings", for each package of each metamodel used in the transformation
+    foreach (IPackage package in transformation.ModelParameter.Select(p => p.UsedPackage).SelectMany(i => i).Distinct())
+    { #>
+
+using <#= package.Name #>;
+
+<# } #>
+
+<# // Generation of the namespace #>
+<#= QvtCodeGeneratorStrings.Namespace(transformation) #> 
+{ 
+
+
+<# // Generation of the Transfo class #>
+public class <#=QvtCodeGeneratorStrings.TransformationName(transformation) #> : GeneratedTransformation {
+
+
+ 	private readonly <#=nameof(IMetaModelInterface) #> editor;<#
+
+    bool hasFunctions = !transformation.OwnedOperation.IsNullOrEmpty();
+	// Functions object, if any functions are defined
+    if (hasFunctions)
+    {
+         #>public readonly <#=QvtCodeGeneratorStrings.FunctionsInterfaceName(transformation)#> Functions;<#
+    }
+
+	// Storing each relation instance once
+    foreach (IRelation relation in transformation.Rule.OfType<IRelation>())
+    {
+        #> public readonly <#= QvtCodeGeneratorStrings.RelationClassName(relation)#> <#= QvtCodeGeneratorStrings.RelationClassName(relation) #>; <#
+    }
+
+	// Dictionnaries for keys
+    foreach (IKey key in transformation.OwnedKey)
+    {
+        IList<IProperty> allKeyProperties = new List<IProperty>();
+        allKeyProperties.AddRange(key.Part);
+        allKeyProperties.AddRange(key.PropertyPaths().Select(pp => pp.Properties.Last()));
+        string tupleTypes = string.Join(",", allKeyProperties.Select(p => p.Type.GetRealTypeName()));
+        #>internal readonly Dictionary<Tuple<<#=tupleTypes#>>, <#=key.Identifies.GetRealTypeName()#>> <#=QvtCodeGeneratorStrings.KeyDictionnaryName(key)#> = new Dictionary<Tuple<<#=tupleTypes#>>, <#=key.Identifies.GetRealTypeName()#>>();<#
+    }
+
+	// Constructor
+		 #>public <#=QvtCodeGeneratorStrings.TransformationName(transformation) #> (<#=nameof(IMetaModelInterface) #> editor <#= hasFunctions ? ", "+ QvtCodeGeneratorStrings.FunctionsInterfaceName(transformation) +" Functions" : "" #>) {
+
+			this.editor = editor;<# 
+			 foreach (IRelation relation in transformation.Rule.OfType<IRelation>())
+    {
+        #>  this.<#= QvtCodeGeneratorStrings.RelationClassName(relation) #> = new <#= QvtCodeGeneratorStrings.RelationClassName(relation) #>(editor, this); 
+		<#
+		if (hasFunctions)
+		 {
+         #>this.Functions = Functions;<#
+		}
+    }
+		#>}<# 
+		 
+
+
+foreach (IRelation relation in transformation.Rule.OfType<IRelation>().Where(r => r.IsTopLevel.GetValueOrDefault(false)))
+{
+    #>public void <#= relation.Name #> (<#=RelationTemplateHelper.GenerateRelationParams(true, relation) #>) {
+		<#= QvtCodeGeneratorStrings.RelationClassName(relation) #>.CheckAndEnforce(<#=RelationTemplateHelper.GenerateRelationParams(false, relation) #>) ;
+	}<#
+}
+
+ 
+#>public override void CallTopRelation (string topRelationName, List<object> parameters)
+	{
+		switch (topRelationName)
+		{
+			<# foreach (IRelation relation in transformation.Rule.OfType<IRelation>().Where(r => r.IsTopLevel.GetValueOrDefault(false)))
+{ #>
+				case "<#= relation.Name #>":
+					<#= relation.Name #>(<#=  string.Join(",", relation.Domain.OfType<IRelationDomain>().Select(
+    d => "(" + d.RootVariable.Type.GetRealTypeName() + ")parameters[" + relation.Domain.IndexOf(d) + "]")) #>);
+					return;
+			<# } #>
+
+			}
+		}
+
+	} // end class
+} // end namespace
