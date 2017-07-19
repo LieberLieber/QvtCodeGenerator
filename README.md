@@ -4,15 +4,14 @@
 
 Generates C# code out of QVT model transformations that follow the [official QVT specification](http://www.omg.org/spec/QVT/).
 
-[Slides.](doc/slides-public.pdf)
-
-## Architecture (summarized)
-
 ![Architecture](doc/architecture.png)
+
+For more information: [slides.](doc/slides-public.pdf)
 
 ## Requirements
 
 - [NMF](https://github.com/NMFCode/NMF)
+- (only for reading QVT models from Enterprise Architect) LieberLieber Enterprise Architect wrapper
 
 ### VS Solutions
 
