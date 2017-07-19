@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C477B66B-F1EB-4D04-B96E-40715CC31F92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LL.MDE.Components.Qvt.Test.Uml2rdbms</RootNamespace>
+    <AssemblyName>LL.MDE.Components.Qvt.Test.Uml2rdbms</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generated\IFunctions.cs" />
+    <Compile Include="Generated\RelationAssocToFKey.cs" />
+    <Compile Include="Generated\RelationAttributeToColumn.cs" />
+    <Compile Include="Generated\RelationClassToTable.cs" />
+    <Compile Include="Generated\RelationComplexAttributeToColumn.cs" />
+    <Compile Include="Generated\RelationPackageToSchema.cs" />
+    <Compile Include="Generated\RelationPrimitiveAttributeToColumn.cs" />
+    <Compile Include="Generated\RelationSuperAttributeToColumn.cs" />
+    <Compile Include="Generated\TransformationumlToRdbms.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.Common\LL.MDE.Components.Qvt.Common.csproj">
+      <Project>{c39480ee-d979-4388-b42f-cc63a49813ad}</Project>
+      <Name>LL.MDE.Components.Qvt.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.DataModels.SimpleRDBMS\LL.MDE.DataModels.SimpleRDBMS.csproj">
+      <Project>{cadf077c-0dde-41e5-a651-9a8e4aca3f01}</Project>
+      <Name>LL.MDE.DataModels.SimpleRDBMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.DataModels.SimpleUML\LL.MDE.DataModels.SimpleUML.csproj">
+      <Project>{8dd31d52-cf35-4976-9b6f-832a3dba6f3b}</Project>
+      <Name>LL.MDE.DataModels.SimpleUML</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Generated\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

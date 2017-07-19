@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50165D87-EC03-4B6A-B166-46E01721233E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LL.MDE.Components.XsdImport.Test.Ecore2EnAr</RootNamespace>
+    <AssemblyName>LL.MDE.Components.XsdImport.Test.Ecore2EnAr</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.EA, Version=2.10.238.1, Culture=neutral, PublicKeyToken=d28e1c76302f6a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\Interop.EA.12.1.1228\lib\net40\Interop.EA.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="LL.MDE.DataAccess.EnAr.Hybrid, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5f4930e0e9fbbe5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LL.MDE.DataAccess.EnAr.Hybrid.1.2.63.53-dev\lib\net40\LL.MDE.DataAccess.EnAr.Hybrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LL.MDE.DataModels.EnAr, Version=2.2.0.0, Culture=neutral, PublicKeyToken=5f4930e0e9fbbe5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LL.MDE.DataModels.EnAr.2.2.15329.48-dev\lib\net40\LL.MDE.DataModels.EnAr.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Collections, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Expressions, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Expressions.1.0.43\lib\net40\NMF.Expressions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Expressions.Linq, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Expressions.1.0.43\lib\net40\NMF.Expressions.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Models, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Serialization, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Utilities, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Utilities.1.0.43\lib\net40\NMF.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ecore2EnArTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\LL.MDE.Components.Common.EnArLoader\LL.MDE.Components.Common.EnArLoader.csproj">
+      <Project>{e0ddb099-56d8-4366-bb4f-d2f04023c6cc}</Project>
+      <Name>LL.MDE.Components.Common.EnArLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\LL.MDE.Components.Common.Util\LL.MDE.Components.Common.Util.csproj">
+      <Project>{822E7F1C-AC2E-407D-B650-F5D3D83618AD}</Project>
+      <Name>LL.MDE.Components.Common.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.XsdImport.Ecore2EnAr\LL.MDE.Components.XsdImport.Ecore2EnAr.csproj">
+      <Project>{8213A54C-A5EF-4A01-AA81-741B89965143}</Project>
+      <Name>LL.MDE.Components.XsdImport.Ecore2EnAr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NMF\EcoreInterop\EcoreInterop.csproj">
+      <Project>{995F4711-32F9-45CD-BA32-48E638DB479C}</Project>
+      <Name>EcoreInterop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NMF\Transformations.Core\Transformations.Core.csproj">
+      <Project>{9a62c452-44e3-4263-a91d-8b480259270d}</Project>
+      <Name>Transformations.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NMF\Transformations\Transformations.csproj">
+      <Project>{235646f1-1f85-47c9-8bd2-a3e854ac38eb}</Project>
+      <Name>Transformations</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="input\caex.ecore" />
+    <None Include="input\generics.ecore">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="input\simple.ecore" />
+    <None Include="input\XMLType.ecore" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="generics" nsURI="generics" nsPrefix="generics">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassUsingTemplatedWithRef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simpletemplatedclass">
+      <eGenericType eClassifier="#//SimpleTemplatedClass">
+        <eTypeArguments eClassifier="#//SomeClass"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleTemplatedClass">
+    <eTypeParameters name="T"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refToTemplate">
+      <eGenericType eTypeParameter="#//SimpleTemplatedClass/T"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bidirectionalbinding" eOpposite="#//ClassUsingTemplatedWithBidirectionalRef/simpletemplatedclass">
+      <eGenericType eClassifier="#//ClassUsingTemplatedWithBidirectionalRef">
+        <eTypeArguments eClassifier="#//SomeClass"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubClassTemplatedSimple">
+    <eGenericSuperTypes eClassifier="#//SimpleTemplatedClass">
+      <eTypeArguments eClassifier="#//SomeClass"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SomeClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassUsingTemplatedWithBidirectionalRef">
+    <eTypeParameters name="Y"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simpletemplatedclass" eOpposite="#//SimpleTemplatedClass/bidirectionalbinding">
+      <eGenericType eClassifier="#//SimpleTemplatedClass">
+        <eTypeArguments eClassifier="#//SomeClass"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="TemplatedDataType" instanceTypeName="newDataType1">
+    <eTypeParameters name="W"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassUsingTemplatedWithAtt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attToTemplated">
+      <eGenericType eClassifier="#//TemplatedDataType">
+        <eTypeArguments eClassifier="#//SomeClass"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplatedClassWithConstraint">
+    <eTypeParameters name="V">
+      <eBounds eClassifier="#//ConstraintClass"/>
+      <eBounds eClassifier="#//SomeClass"/>
+    </eTypeParameters>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubclassTemplatedConstraint">
+    <eGenericSuperTypes eClassifier="#//TemplatedClassWithConstraint">
+      <eTypeArguments eClassifier="#//ConstraintSubClass"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintSubClass" eSuperTypes="#//ConstraintClass #//SomeClass"/>
+</ecore:EPackage>

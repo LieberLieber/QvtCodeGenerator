@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E30E467C-8647-471F-9122-A05C6A2640C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LL.MDE.Components.Qvt.Test.Demo1</RootNamespace>
+    <AssemblyName>LL.MDE.Components.Qvt.Test.Demo1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LL.MDE.DataModels.EnAr, Version=2.2.0.0, Culture=neutral, PublicKeyToken=5f4930e0e9fbbe5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LL.MDE.DataModels.EnAr.2.2.15329.48-dev\lib\net40\LL.MDE.DataModels.EnAr.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Demo1Test.cs" />
+    <Compile Include="Generated\RelationRelation1.cs" />
+    <Compile Include="Generated\TransformationDemo1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\LL.MDE.Components.Common.EnArLoader\LL.MDE.Components.Common.EnArLoader.csproj">
+      <Project>{e0ddb099-56d8-4366-bb4f-d2f04023c6cc}</Project>
+      <Name>LL.MDE.Components.Common.EnArLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\LL.MDE.Components.Common.Util\LL.MDE.Components.Common.Util.csproj">
+      <Project>{822e7f1c-ac2e-407d-b650-f5d3d83618ad}</Project>
+      <Name>LL.MDE.Components.Common.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.Common\LL.MDE.Components.Qvt.Common.csproj">
+      <Project>{c39480ee-d979-4388-b42f-cc63a49813ad}</Project>
+      <Name>LL.MDE.Components.Qvt.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.EnArInterface\LL.MDE.Components.Qvt.EnArInterface.csproj">
+      <Project>{718FDF7B-4F18-4647-865C-C1105B69BA16}</Project>
+      <Name>LL.MDE.Components.Qvt.EnArInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.TestUtil\LL.MDE.Components.Qvt.TestUtil.csproj">
+      <Project>{053AA7CA-2140-4CFF-AE43-47F74BEFD8DD}</Project>
+      <Name>LL.MDE.Components.Qvt.TestUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

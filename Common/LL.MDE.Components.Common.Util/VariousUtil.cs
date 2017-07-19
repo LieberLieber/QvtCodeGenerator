@@ -6,7 +6,7 @@ namespace LL.MDE.Components.Common.Util
     public class VariousUtil
     {
         /// <summary>
-        /// Operation to retrieve the Visual studio project folder of the executed program/test.
+        /// Non EnAr-specific operation to retrieve the Visual studio project folder of the executed program/test.
         /// </summary>
         /// <returns></returns>
         public static string GetProjectFolder()

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E72D3D8-1C64-4198-BA75-E8CAE7AFCC34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LL.MDE.Components.Qvt.Test</RootNamespace>
+    <AssemblyName>LL.MDE.Components.Qvt.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.EA, Version=2.10.238.1, Culture=neutral, PublicKeyToken=d28e1c76302f6a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\Interop.EA.12.1.1228\lib\net40\Interop.EA.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="LL.MDE.DataAccess.EnAr.Hybrid, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5f4930e0e9fbbe5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LL.MDE.DataAccess.EnAr.Hybrid.1.2.63.53-dev\lib\net40\LL.MDE.DataAccess.EnAr.Hybrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LL.MDE.DataModels.EnAr, Version=2.2.0.0, Culture=neutral, PublicKeyToken=5f4930e0e9fbbe5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LL.MDE.DataModels.EnAr.2.2.15329.48-dev\lib\net40\LL.MDE.DataModels.EnAr.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.3.2\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.3.2\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Collections, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Expressions, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Expressions.1.0.43\lib\net40\NMF.Expressions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Expressions.Linq, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Expressions.1.0.43\lib\net40\NMF.Expressions.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Models, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Serialization, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Repository.1.0.43\lib\net40\NMF.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NMF.Utilities, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NMF-Utilities.1.0.43\lib\net40\NMF.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Metadata, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.3.0\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tests\CodeGeneratorTest2.cs" />
+    <Compile Include="Tests\CodeGeneratorTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\EnArImportEMOFTests2.cs" />
+    <Compile Include="Tests\EnArImportEMOFTests.cs" />
+    <Compile Include="Tests\EnArImportQVTTests2.cs" />
+    <Compile Include="Tests\EnArImportQVTTests.cs" />
+    <Compile Include="Tests\CSharpParserTests.cs" />
+    <Compile Include="Tests\CloseEnArAfterTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="TestData\testModel.eap" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestData\testModel2.eap" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\LL.MDE.Components.Common.EnArLoader\LL.MDE.Components.Common.EnArLoader.csproj">
+      <Project>{E0DDB099-56D8-4366-BB4F-D2F04023C6CC}</Project>
+      <Name>LL.MDE.Components.Common.EnArLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.CodeGenerator\LL.MDE.Components.Qvt.CodeGenerator.csproj">
+      <Project>{A3847E01-4ADC-4FD4-BBD4-E5E0D3A1E8A1}</Project>
+      <Name>LL.MDE.Components.Qvt.CodeGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.Common\LL.MDE.Components.Qvt.Common.csproj">
+      <Project>{c39480ee-d979-4388-b42f-cc63a49813ad}</Project>
+      <Name>LL.MDE.Components.Qvt.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.EnArImport\LL.MDE.Components.Qvt.EnArImport.csproj">
+      <Project>{093c2d52-ce39-46c5-9668-b93b9a0b0bf4}</Project>
+      <Name>LL.MDE.Components.Qvt.EnArImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.EnArInterface\LL.MDE.Components.Qvt.EnArInterface.csproj">
+      <Project>{718fdf7b-4f18-4647-865c-c1105b69ba16}</Project>
+      <Name>LL.MDE.Components.Qvt.EnArInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.Metamodel\LL.MDE.Components.Qvt.Metamodel.csproj">
+      <Project>{1de4dd8d-4829-49e4-a175-b5c740e69f9c}</Project>
+      <Name>LL.MDE.Components.Qvt.Metamodel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.TestUtil\LL.MDE.Components.Qvt.TestUtil.csproj">
+      <Project>{053aa7ca-2140-4cff-ae43-47f74befd8dd}</Project>
+      <Name>LL.MDE.Components.Qvt.TestUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.TextConcreteSyntaxGen\LL.MDE.Components.Qvt.TextConcreteSyntaxGen.csproj">
+      <Project>{32025c31-5ead-4b30-ba61-bdf830484817}</Project>
+      <Name>LL.MDE.Components.Qvt.TextConcreteSyntaxGen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.DataModels.XML\LL.MDE.DataModels.XML.csproj">
+      <Project>{c595fda6-f61f-4b63-bb0c-15df18b9b778}</Project>
+      <Name>LL.MDE.DataModels.XML</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests2\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

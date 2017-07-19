@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D2B1CCC-FB82-4513-BB68-FF7E329B564C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LL.MDE.Components.Qvt.Test.EA2FMEATest</RootNamespace>
+    <AssemblyName>LL.MDE.Components.Qvt.Test.EA2FMEATest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.EA, Version=2.10.238.1, Culture=neutral, PublicKeyToken=d28e1c76302f6a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\Interop.EA.12.1.1228\lib\net40\Interop.EA.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="LL.MDE.DataAccess.EnAr.Hybrid, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5f4930e0e9fbbe5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LL.MDE.DataAccess.EnAr.Hybrid.1.2.63.53-dev\lib\net40\LL.MDE.DataAccess.EnAr.Hybrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LL.MDE.DataModels.EnAr, Version=2.2.0.0, Culture=neutral, PublicKeyToken=5f4930e0e9fbbe5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LL.MDE.DataModels.EnAr.2.2.15329.48-dev\lib\net40\LL.MDE.DataModels.EnAr.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EA2FMEATest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.Common\LL.MDE.Components.Qvt.Common.csproj">
+      <Project>{C39480EE-D979-4388-B42F-CC63A49813AD}</Project>
+      <Name>LL.MDE.Components.Qvt.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.EnArInterface\LL.MDE.Components.Qvt.EnArInterface.csproj">
+      <Project>{718fdf7b-4f18-4647-865c-c1105b69ba16}</Project>
+      <Name>LL.MDE.Components.Qvt.EnArInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\LL.MDE.Components.Common.EnArLoader\LL.MDE.Components.Common.EnArLoader.csproj">
+      <Project>{E0DDB099-56D8-4366-BB4F-D2F04023C6CC}</Project>
+      <Name>LL.MDE.Components.Common.EnArLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.Components.Qvt.TestUtil\LL.MDE.Components.Qvt.TestUtil.csproj">
+      <Project>{053AA7CA-2140-4CFF-AE43-47F74BEFD8DD}</Project>
+      <Name>LL.MDE.Components.Qvt.TestUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LL.MDE.DataModels.XML\LL.MDE.DataModels.XML.csproj">
+      <Project>{c595fda6-f61f-4b63-bb0c-15df18b9b778}</Project>
+      <Name>LL.MDE.DataModels.XML</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Generated\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rootPackage" nsURI="rootPackage" nsPrefix="rootPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="A" eSuperTypes="#//AbstractA">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="a" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="a2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//C"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" upperBound="-1" eType="#//B"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="B">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//C" eOpposite="#//C/b"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stuff" eType="#//CustomDataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" lowerBound="2" upperBound="3"
+        eType="#//B" eOpposite="#//B/c"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cstring" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="CustomDataType" instanceTypeName="newDataType1"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractA" abstract="true"/>
+  <eSubpackages name="aSubPackage" nsURI="aSubPackage" nsPrefix="aSubPackage">
+    <eClassifiers xsi:type="ecore:EClass" name="D">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="d" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eSubpackages name="aSubSubPackage" nsURI="aSubSubPackage" nsPrefix="aSubSubPackage">
+      <eClassifiers xsi:type="ecore:EClass" name="E">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="f" eType="#//aSubPackage/aSubSubPackage/F"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="F"/>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>
