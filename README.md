@@ -4,9 +4,11 @@
 
 Generates C# code out of QVT model transformations that follow the [official QVT specification](http://www.omg.org/spec/QVT/).
 
+[Slides.](doc/slides-public.pdf)
+
 ## Architecture (summarized)
 
-![Architecture](img/architecture.png)
+![Architecture](doc/architecture.png)
 
 ## Requirements
 
