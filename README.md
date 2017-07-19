@@ -4,11 +4,15 @@
 
 Generates C# code out of QVT model transformations that follow the [official QVT specification](http://www.omg.org/spec/QVT/).
 
+## Architecture (summarized)
+
+![Architecture](img/architecture.png)
+
 ## Requirements
 
 - [NMF](https://github.com/NMFCode/NMF)
 
-### Solutions
+### VS Solutions
 
 - `Common`: contains a VS solution with the projects commonly used by other solutions, such as utility classes for interacting with EnAr.
 - `QvtEnginePerformance`: contains a VS solution with the QVT code generator. *Note: this solution references projects contained in the `Common` folder.*
